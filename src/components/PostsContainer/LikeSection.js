@@ -9,8 +9,7 @@ const LikeSection = props => {
     <div>
     <div
       className="like-section"
-      key="likes-icons-container"
-    >
+      key="likes-icons-container">
       <div className="like-section-wrapper">
         <i className="far fa-heart" />
       </div>
@@ -18,9 +17,8 @@ const LikeSection = props => {
         <i className="far fa-comment" />
       </div>
     </div>
-    <p className="like-number">{setLike}</p>
-</div>
-  )
-};
+  <button className="like-number"   onClick= {()=>{setLike(like+1);}}> {setLike} </button>
+  </div>)
+}
 
 export default LikeSection;
