@@ -12,13 +12,23 @@ const LikeSection = props => {
       key="likes-icons-container">
       <div className="like-section-wrapper">
         <i className="far fa-heart" />
+        <span className="like-number" >like </span>
       </div>
-      <div className="like-section-wrapper">
+      <div className="like-section-wrapperon" onClick= {()=>{ }}>
         <i className="far fa-comment" />
       </div>
     </div>
-  <button className="like-number"   onClick= {()=>{setLike(like+1);}}> {setLike} </button>
   </div>)
 }
 
 export default LikeSection;
+
+// const Post = props => {
+//   // set up state for the likes
+//   const [likes, setLikes] = useState(props.post.likes)
+//   const incrementLike = () => {
+//     setLikes(likes + 1);
+//   }
+// new messages
+// 7:12
+// <div className="like-section-wrapper" onClick={props.incrementLike}>

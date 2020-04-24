@@ -8,7 +8,8 @@ import "./Posts.css";
 // pass props in this file to
 const Post = props => {
   // set up state for the likes
-const [state, useState] = useState(""); 
+  const [like, setlike] = useState(props.post.likes); 
+  
   return (
     <div className="post-border">
       <PostHeader
@@ -24,7 +25,7 @@ const [state, useState] = useState("");
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection />
+      <LikeSection likes={props.post.likes}/>
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
@@ -36,3 +37,12 @@ const [state, useState] = useState("");
 export default Post;
 
 
+// const Post = props => {
+//   // set up state for the likes
+//   const [likes, setLikes] = useState(props.post.likes)
+//   const incrementLike = () => {
+//     setLikes(likes + 1);
+//   }
+// new messages
+// 7:12
+// <div className="like-section-wrapper" onClick={props.incrementLike}>
