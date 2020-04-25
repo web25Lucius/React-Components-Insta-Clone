@@ -1,27 +1,95 @@
-// look at the likes on this component. Right now it is hard coded on line 20.
+// look at the likes on this component. Right now it is hard coded as <p className= "like-number">.
 // console.log your props and see how to add likes to this component so that it will update when you click the icon.
 // HINT: You will need to add an onClick event pass through your props and update the hard coded Likes
-import React, {useState} from "react";
+import React from "react";
 
 const LikeSection = props => {
-  const [like, setLike] = useState(0); 
+  // console.log(props);
   return (
     <div>
     <div
       className="like-section"
-      key="likes-icons-container">
+      key="likes-icons-container"
+    >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" />
-        <span className="like-number" >like </span>
+        <i onClick={props.clickHandler} className="far fa-heart" />
       </div>
-      <div className="like-section-wrapperon" onClick= {()=>{ }}>
+      <div className="like-section-wrapper">
         <i className="far fa-comment" />
       </div>
     </div>
-  </div>)
-}
+    <p className="like-number">
+      
+  {props.likeNumber} Likes</p>
+</div>
+  )
+};
 
 export default LikeSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, {useState} from "react";
+
+// const LikeSection = props => {
+//   const [like, setLike] = useState(0); 
+//   return (
+//     <div>
+//     <div
+//       className="like-section"
+//       key="likes-icons-container">
+//       <div className="like-section-wrapper">
+//         <i className="far fa-heart" />
+//         <span className="like-number" >like </span>
+//       </div>
+//       <div className="like-section-wrapperon" onClick= {()=>{ }}>
+//         <i className="far fa-comment" />
+//       </div>
+//     </div>
+//   </div>)
+// }
+
+// export default LikeSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const Post = props => {
 //   // set up state for the likes
