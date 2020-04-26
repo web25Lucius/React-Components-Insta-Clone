@@ -6,12 +6,10 @@ import React, {useState} from "react";
 const LikeSection = props => {
   // console.log(props);
 
+ 
   const [count, setCount] = useState(props.likeNumber);
-  console.log(count);
-
-  const addOne = () => {
-   return setCount(count+ 1)
-  };
+  // console.log(count);
+  
 
 
   return (
@@ -43,7 +41,9 @@ export default LikeSection;
 
 
 
-
+// const addOne = () => {
+//   return setCount(count+ 1)
+//  };
 
 
 

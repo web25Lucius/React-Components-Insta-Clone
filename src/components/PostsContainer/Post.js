@@ -13,14 +13,14 @@ import "./Posts.css";
 const Post = props => {
   // console.log(props);
   const [count, setCount] = useState(props.likeNumber);
-  console.log(count);
+  // console.log(count);
 
-let digits = [];
-  {dummyData.map(lNum => {
-    return (
-      digits.push(lNum.likes)
-    );
-  } )}
+// let digits = [];
+//   {dummyData.map(lNum => {
+//     return (
+//       digits.push(lNum.likes)
+//     );
+//   } )}
 
   return (
     <div className="post-border">
@@ -41,7 +41,10 @@ let digits = [];
           </div>
             <LikeSection 
                 clickHandler= {function addOne (count){
-                return setCount(count + 1)
+                let newCount = 0;  
+                newCount= setCount(count + 1) 
+                console.log(`this is the ${newCount}`);
+                return newCount
                 }}
                 likeNumber={element.likes}
             />
