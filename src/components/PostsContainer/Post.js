@@ -1,4 +1,5 @@
 // You will add code in this file
+// import React from "react";
 import React, {useState} from "react";
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
@@ -11,18 +12,19 @@ import "./Posts.css";
 // pass props in this file to
 const Post = props => {
   // console.log(props);
+  const [count, setCount] = useState(props.likeNumber);
+  console.log(count);
 
-  let stateData = Object.values(dummyData);
-  console.log(stateData.likes);
-
-  const [count, setCount] = useState("");
-
-  const addOne = () => {
-    setCount(count + 1);
-  };
+let digits = [];
+  {dummyData.map(lNum => {
+    return (
+      digits.push(lNum.likes)
+    );
+  } )}
 
   return (
     <div className="post-border">
+      
       {dummyData.map(element => {
         return  (
           <div key={dummyData.id}>
@@ -35,9 +37,12 @@ const Post = props => {
               alt="post thumbnail"
               className="post-image"
               src={element.imageUrl}/>
+              
           </div>
             <LikeSection 
-                clickHandler={addOne}
+                clickHandler= {function addOne (count){
+                return setCount(count + 1)
+                }}
                 likeNumber={element.likes}
             />
             <CommentSection
@@ -55,7 +60,6 @@ const Post = props => {
   )};
 
 export default Post;
-
 
 
 

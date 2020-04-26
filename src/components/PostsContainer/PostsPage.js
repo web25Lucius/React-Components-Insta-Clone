@@ -3,7 +3,7 @@
 
 import React , {useState} from "react";
 import Post from "./Post";
-import dummyData from "../../dummy-data";
+// import dummyData from "../../dummy-data";
 import "./Posts.css";
 
 
