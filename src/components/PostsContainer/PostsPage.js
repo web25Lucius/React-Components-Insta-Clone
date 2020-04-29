@@ -1,28 +1,125 @@
+
+
 //Complete the necessary code in this file
 // import useState
-
-import React , {useState} from "react";
+import React, { useState } from "react";
 import Post from "./Post";
-// import dummyData from "../../dummy-data";
 import "./Posts.css";
-
+// import data 
+import DummyData from '../../dummy-data';
 
 const PostsPage = () => {
-  
+  const [data, setData] = useState(DummyData);
+  // set up state for your data
   return (
     <div className="posts-container-wrapper">
-      <Post />
-    </div>)
+      {/* map through data here to return a Post and pass data as props to Post */}
+      {data.map((element, id) => {
+        return <Post post={element} key={id} />
+      })}
+    </div>
+  );
 };
-
 
 export default PostsPage;
 
 
-// return (
-//   <div className="posts-container-wrapper">
-//    {dummyData.map(element => {
-//       return ( 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //Complete the necessary code in this file
+// // import useState
+
+// import React , {useState} from "react";
+// import Post from "./Post";
+// import CommentSection from "../CommentSection/CommentSectionContainer";
+// import LikeSection from "./LikeSection";
+// import PostHeader from "./PostHeader";
+// import dummyData from "../../dummy-data";
+// // import dummyData from "../../dummy-data";
+// import "./Posts.css";
+
+
+// const PostsPage = () => {
+
+// //  const [like, setLikes] = useState ({dummyData}); 
+//   const [post, setPost] = useState(dummyData);
+//   // const [like, setLike] = useState(dummyData.likes);
+    
+
+//   //     function addOne (){
+//   //       setLike(`${like + 1}`)
+//   //       console.log(like);
+//   //       return like
+//   //       }
+    
+//   return (
+//     <div className="posts-container-wrapper">
+//       {post.map((element, id) => {
+//         return ( 
+//            <div>
+//              <div className="post-border">
+//             <PostHeader
+//             key={id.Header}
+//             username = {element.username}
+//             thumbnailUrl = {element.thumbnailUrl} />
+
+//             <Post
+//                 key={id.Post}
+//                 src = {element.imageUrl} />
+              
+//           </div>
+//             <LikeSection
+           
+//             key={id.LikeSection}
+//             data = {post}
+//             // likeNumber = {like}
+//             // setLike= {setLike}
+//             />
+
+//             <CommentSection 
+//              key={id.CommentSection}
+//              postId={element.imageUrl}
+//              comments={element.comments}
+//             />
+//       </div>
+              
+         
+    
+//         )})
+// }
+// </div>
+// )
+// }
+
+
+// export default PostsPage;
+
+
+{/* return (
+   <div className="posts-container-wrapper">
+    {dummyData.map(element => { */}
+{/* //       return ( 
 //         <div key={element.id}>
 //           <Post />
 //         </div>
@@ -30,7 +127,7 @@ export default PostsPage;
 //    )
   
 //       }</div>)
-// };
+// }; */}
 
 
 
@@ -71,7 +168,8 @@ export default PostsPage;
 
 
 
-
+  // .map(hearts =>{
+  //   return hearts.likes
 
 
 

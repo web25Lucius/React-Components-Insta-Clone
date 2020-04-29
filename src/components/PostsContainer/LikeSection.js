@@ -1,32 +1,24 @@
-// look at the likes on this component. Right now it is hard coded as <p className= "like-number">.
+
+// look at the likes on this component. Right now it is hard coded on line 20.
 // console.log your props and see how to add likes to this component so that it will update when you click the icon.
 // HINT: You will need to add an onClick event pass through your props and update the hard coded Likes
+import React from "react";
 
-import React, {useState} from "react";
 const LikeSection = props => {
-  // console.log(props);
-
- 
-  const [count, setCount] = useState(props.likeNumber);
-  // console.log(count);
-  
-
-
   return (
     <div>
     <div
       className="like-section"
       key="likes-icons-container"
     >
-      <div onClick={props.clickHandler} className="like-section-wrapper">
-        <i className="far fa-heart" />
+      <div className="like-section-wrapper">
+        <i className="far fa-heart" onClick={()=> props.setLikes (props.likes + 1)}/>
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />
       </div>
     </div>
-    <p className="like-number">
-      {props.likeNumber} Likes</p>
+    <p className="like-number">{props.likes} likes</p>
 </div>
   )
 };
@@ -41,36 +33,71 @@ export default LikeSection;
 
 
 
-// const addOne = () => {
-//   return setCount(count+ 1)
-//  };
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// look at the likes on this component. Right now it is hard coded as <p className= "like-number">.
+// console.log your props and see how to add likes to this component so that it will update when you click the icon.
+// HINT: You will need to add an onClick event pass through your props and update the hard coded Likes
 
 // import React, {useState} from "react";
-
+// import LikeButton from "./LikeButton";
 // const LikeSection = props => {
-//   const [like, setLike] = useState(0); 
+//   console.log(`props from likes-props`, props);
+//   const [like, setLike] = useState (props.data.likes);
+//   return (
+//       <div
+//         className="like-section"
+//         key="likes-icons-container"
+//       >
+//         {like.map((el, key) => {
+//           return <LikeButton like = {like}  setLike = {setLike} /> 
+//       })}
+//     </div>
+
+//   )
+// };
+
+// export default LikeSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {/* import React, {useState} from "react";
+const LikeSection = props => { */}
+
+{/* //   const [like, setLike] = useState(0); 
 //   return (
 //     <div>
-//     <div
-//       className="like-section"
+//     <div */}
+{/* //       className="like-section"
 //       key="likes-icons-container">
 //       <div className="like-section-wrapper">
 //         <i className="far fa-heart" />
@@ -80,10 +107,10 @@ export default LikeSection;
 //         <i className="far fa-comment" />
 //       </div>
 //     </div>
-//   </div>)
-// }
+//   </div>) */}
+{/* // }
 
-// export default LikeSection;
+// export default LikeSection; */}
 
 
 
